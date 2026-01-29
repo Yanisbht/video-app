@@ -1,6 +1,6 @@
 # StreamDeepBlock
 
-##📖 Présentation du projet
+## 📖 Présentation du projet
 
 StreamDeepBlock est une application web développée dans un objectif pédagogique afin de comprendre le fonctionnement complet d’une application full-stack.
 
