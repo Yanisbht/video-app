@@ -1,8 +1,8 @@
-## StreamDeepBlock
+# StreamDeepBlock
 
 Plateforme web permettant d’uploader, stocker et visionner ses vidéos de manière privée et sécurisée.
 
-# Fonctionnalités
+## Fonctionnalités
 
 🔐 Création de compte / Connexion utilisateur
 
@@ -14,7 +14,7 @@ Plateforme web permettant d’uploader, stocker et visionner ses vidéos de mani
 
 🗄 Stockage des données avec base SQLite
 
-⚙️ Prérequis
+## Prérequis
 
 L’application fonctionne avec Node.js.
 
@@ -64,7 +64,7 @@ video-app/
 ├── server.js          → Serveur Node.js (backend)
 └── package.json       → Dépendances du projet
 
-🧠 Base de données
+## Base de données
 
 Le projet utilise SQLite.
 
@@ -79,7 +79,7 @@ DB Browser for SQLite
 Node.js n’est pas inclus dans le projet (trop lourd pour GitHub).
 Chaque utilisateur doit l’installer sur son PC avant de lancer l’application.
 
-👨‍💻 Auteur
+## Auteur
 
 Projet réalisé par Yanis BUHOT
 BUT Métiers du Multimédia et de l’Internet 💻
