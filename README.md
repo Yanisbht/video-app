@@ -2,7 +2,33 @@
 
 ## 📖 Présentation du projet
 
-StreamDeepBlock est une application web développée dans un objectif pédagogique afin de comprendre le fonctionnement complet d’une application full-stack.
+Ce projet a été réalisé dans le cadre d’un exercice technique pour une recherche de stage.
+
+L’objectif était de démontrer ma capacité à développer une application web complète, comprenant :
+
+un frontend fonctionnel
+
+un backend Node.js
+
+une base de données
+
+un système d’authentification
+
+la gestion de fichiers
+
+Ce projet met en avant mes compétences en :
+
+développement full-stack
+
+logique serveur
+
+gestion des utilisateurs
+
+structuration d’une base de données
+
+interaction frontend ↔ backend
+
+## 🧩 Fonctionnement utilisateur
 
 Le projet permet à un utilisateur de :
 
