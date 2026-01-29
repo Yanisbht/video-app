@@ -6,41 +6,41 @@ Ce projet a été réalisé dans le cadre d’un exercice technique pour une rec
 
 ### L’objectif était de démontrer ma capacité à développer une application web complète, comprenant :
 
-un frontend fonctionnel
+- un frontend fonctionnel
 
-un backend Node.js
+- un backend Node.js
 
-une base de données
+- une base de données
 
-un système d’authentification
+- un système d’authentification
 
-la gestion de fichiers
+- la gestion de fichiers
 
 ### Ce projet met en avant mes compétences en :
 
-développement full-stack
+- développement full-stack
 
-logique serveur
+- logique serveur
 
-gestion des utilisateurs
+- gestion des utilisateurs
 
-structuration d’une base de données
+- structuration d’une base de données
 
-interaction frontend ↔ backend
+- interaction frontend ↔ backend
 
 ## 🧩 Fonctionnement utilisateur
 
 Le projet permet à un utilisateur de :
 
-créer un compte personnel
+- créer un compte personnel
 
-se connecter de manière sécurisée
+- se connecter de manière sécurisée
 
-uploader ses propres vidéos
+- uploader ses propres vidéos
 
-visualiser uniquement ses vidéos
+- visualiser uniquement ses vidéos
 
-supprimer ses contenus
+- supprimer ses contenus
 
 Chaque utilisateur possède donc sa bibliothèque privée.
 
