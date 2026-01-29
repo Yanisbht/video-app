@@ -8,28 +8,33 @@
 <body>
 
 <div class="dashboard">
-  <!-- Topbar -->
+
   <div class="topbar">
     <h2>Ma bibliothèque</h2>
     <a class="logout" href="/logout">Se déconnecter</a>
   </div>
 
-  <!-- Formulaire Upload -->
-  <h3>Uploader une vidéo</h3>
-  <form id="uploadForm" enctype="multipart/form-data">
-  <input name="title" placeholder="Titre de la vidéo" required>
-  <input type="file" name="video" accept="video/*" required>
-  <button type="submit">Upload</button>
-</form>
+  <div class="main-layout">
 
+    <!-- COLONNE GAUCHE : UPLOAD -->
+    <div class="upload-section">
+      <h3>Uploader une vidéo</h3>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input name="title" placeholder="Titre de la vidéo" required>
+        <input type="file" name="video" accept="video/*" required>
+        <button type="submit">Upload</button>
+      </form>
+    </div>
 
-  <hr>
+    <!-- COLONNE DROITE : VIDEOS -->
+    <div class="library-section">
+      <h3>Mes vidéos</h3>
+      <div id="videos" class="video-grid"></div>
+    </div>
 
-  <!-- Zone d'affichage vidéos -->
-  <div id="videos" class="video-grid"></div>
+  </div>
 </div>
 
-<div id="videos" class="video-grid"></div>
 
 <script>
 async function loadVideos() {
@@ -56,17 +61,17 @@ async function loadVideos() {
   });
 }
 
-// Upload live
+
 const form = document.getElementById("uploadForm");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const formData = new FormData(form);
   await fetch("/upload", { method: "POST", body: formData });
   form.reset();
-  loadVideos(); // recharge la bibliothèque
+  loadVideos(); 
 });
 
-loadVideos(); // au chargement de la page
+loadVideos(); 
 </script>
 
 
