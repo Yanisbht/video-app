@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ma Bibliothèque - StreamDeepBlock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- Topbar -->
+  <div class="topbar">
+    <h2>Ma bibliothèque</h2>
+    <a class="logout" href="/logout">Se déconnecter</a>
+  </div>
+
+  <!-- Formulaire Upload -->
+  <h3>Uploader une vidéo</h3>
+  <form id="uploadForm" enctype="multipart/form-data">
+  <input name="title" placeholder="Titre de la vidéo" required>
+  <input type="file" name="video" accept="video/*" required>
+  <button type="submit">Upload</button>
+</form>
+
+
+  <hr>
+
+  <!-- Zone d'affichage vidéos -->
+  <div id="videos" class="video-grid"></div>
+</div>
+
+<div id="videos" class="video-grid"></div>
+
+<script>
+async function loadVideos() {
+  const res = await fetch("/my-videos");
+  const videos = await res.json();
+
+  const container = document.getElementById("videos");
+  container.innerHTML = "";
+
+  if(videos.length === 0){
+    container.innerHTML = "<div class='video-card'>Aucune vidéo</div>";
+    return;
+  }
+
+  videos.forEach(v => {
+    container.innerHTML += `
+      <div class="video-card">
+        <h4>${v.title}</h4>
+        <video width="100%" controls src="/videos/${v.filename}"></video>
+        <br>
+        <a href="/delete/${v.id}">Supprimer</a>
+      </div>
+    `;
+  });
+}
+
+// Upload live
+const form = document.getElementById("uploadForm");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  await fetch("/upload", { method: "POST", body: formData });
+  form.reset();
+  loadVideos(); // recharge la bibliothèque
+});
+
+loadVideos(); // au chargement de la page
+</script>
+
+
+</body>
+</html>
