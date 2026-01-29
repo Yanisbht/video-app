@@ -55,7 +55,7 @@ Ouvrir dans un navigateur :
 
 http://localhost:3000
 
-🗂 Structure du projet
+## Structure du projet
 video-app/
 │
 ├── public/            → Fichiers frontend (HTML / CSS)
