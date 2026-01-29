@@ -4,7 +4,7 @@
 
 Ce projet a été réalisé dans le cadre d’un exercice technique pour une recherche de stage.
 
-L’objectif était de démontrer ma capacité à développer une application web complète, comprenant :
+### L’objectif était de démontrer ma capacité à développer une application web complète, comprenant :
 
 un frontend fonctionnel
 
@@ -16,7 +16,7 @@ un système d’authentification
 
 la gestion de fichiers
 
-Ce projet met en avant mes compétences en :
+### Ce projet met en avant mes compétences en :
 
 développement full-stack
 
