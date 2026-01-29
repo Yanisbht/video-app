@@ -52,33 +52,33 @@ L’application repose sur une architecture simple :
 
 Interface réalisée en :
 
-HTML
+- HTML
 
-CSS moderne (design sombre, effet glassmorphism)
+- CSS moderne (design sombre, effet glassmorphism)
 
-JavaScript (fetch API)
+- JavaScript (fetch API)
 
 Le frontend permet :
 
-l’envoi des formulaires
+- l’envoi des formulaires
 
-l’upload de fichiers
+- l’upload de fichiers
 
-l’affichage dynamique des vidéos
+- l’affichage dynamique des vidéos
 
 ## ⚙️ Backend (Node.js)
 
 Le serveur est développé avec Express.js et gère :
 
-l’authentification (sessions)
+- l’authentification (sessions)
 
-la réception des formulaires
+- la réception des formulaires
 
-la gestion des routes protégées
+- la gestion des routes protégées
 
-l’upload des fichiers vidéos (Multer)
+- l’upload des fichiers vidéos (Multer)
 
-la communication avec la base de données
+- la communication avec la base de données
 
 ## 🗄 Base de données
 
@@ -94,11 +94,11 @@ Cela permet d’associer chaque vidéo à son utilisateur.
 
 ## 🔐 Sécurité
 
-Système de sessions pour garder l’utilisateur connecté
+- Système de sessions pour garder l’utilisateur connecté
 
-Routes protégées (impossible d’accéder aux vidéos sans être connecté)
+- Routes protégées (impossible d’accéder aux vidéos sans être connecté)
 
-Les vidéos affichées sont filtrées par utilisateur
+- Les vidéos affichées sont filtrées par utilisateur
 
 ## Structure du projet
 video-app/
