@@ -81,5 +81,4 @@ Chaque utilisateur doit l’installer sur son PC avant de lancer l’application
 
 ## Auteur
 
-Projet réalisé par Yanis BUHOT
-BUT Métiers du Multimédia et de l’Internet 💻
+Projet réalisé par Yanis BUHOT pour Deepblock
