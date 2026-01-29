@@ -11,20 +11,19 @@ const fs = require("fs");
 app.use("/videos", express.static("uploads/videos"));
 
 
-// Permet de lire les formulaires
 app.use(express.urlencoded({ extended: true }));
 
-// Sert les fichiers du dossier public
+
 app.use(express.static("public"));
 
-// Session = garder l'utilisateur connecté
+
 app.use(session({
   secret: "secret123",
   resave: false,
   saveUninitialized: true
 }));
 
-// Base de données SQLite
+
 const db = new sqlite3.Database("./database.db");
 
 db.run(`CREATE TABLE IF NOT EXISTS users (
@@ -41,7 +40,6 @@ db.run(`CREATE TABLE IF NOT EXISTS videos (
 )`);
 
 
-// Middleware : vérifier si connecté
 function auth(req, res, next) {
   if (!req.session.userId) return res.redirect("/");
   next();
@@ -59,7 +57,7 @@ const upload = multer({ storage });
 
 // ---------- ROUTES ----------
 
-// Landing page
+// PAGE DESTINATAIRE
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
@@ -72,7 +70,7 @@ app.post("/register", (req, res) => {
     [username, password],
     (err) => {
       if (err) return res.send("Utilisateur déjà existant");
-      res.send("Compte créé ! <a href='/'>Se connecter</a>");
+      res.sendFile(path.join(__dirname, "public/success.html"));
     }
   );
 });
@@ -94,13 +92,13 @@ app.post("/login", (req, res) => {
   );
 });
 
-// DASHBOARD (page protégée)
+// DASHBOARD 
 app.get("/dashboard", auth, (req, res) => {
   res.sendFile(path.join(__dirname, "public/dashboard.html"));
 });
 
 
-//upload
+//UPLAOD
 
 app.post("/upload", auth, upload.single("video"), (req, res) => {
   db.run(
@@ -115,7 +113,7 @@ app.post("/upload", auth, upload.single("video"), (req, res) => {
 
 
 
-//my-videos
+//MY-video
 
 app.get("/my-videos", auth, (req, res) => {
   db.all(
@@ -128,21 +126,21 @@ app.get("/my-videos", auth, (req, res) => {
   );
 });
 
-// Supprimer une vidéo
+// SUPPRIMER VIDEO
 app.get("/delete/:id", auth, (req, res) => {
   db.get("SELECT * FROM videos WHERE id=?", [req.params.id], (err, video) => {
     if (err || !video) return res.status(404).send("Vidéo non trouvée");
 
-    // Vérifie que l'utilisateur connecté est bien le propriétaire
+    
     if (video.user_id !== req.session.userId) return res.status(403).send("Accès interdit");
 
-    // Supprime le fichier physique
+    
     fs.unlinkSync("uploads/videos/" + video.filename);
 
-    // Supprime la vidéo de la base
+    
     db.run("DELETE FROM videos WHERE id=?", [req.params.id], (err) => {
       if (err) return res.status(500).send("Erreur lors de la suppression");
-      res.redirect("/dashboard"); // Retour au dashboard
+      res.redirect("/dashboard"); // 
     });
   });
 });
