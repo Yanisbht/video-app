@@ -1,8 +1,8 @@
-🎬 StreamDeepBlock
+## StreamDeepBlock
 
 Plateforme web permettant d’uploader, stocker et visionner ses vidéos de manière privée et sécurisée.
 
-🚀 Fonctionnalités
+# Fonctionnalités
 
 🔐 Création de compte / Connexion utilisateur
 
